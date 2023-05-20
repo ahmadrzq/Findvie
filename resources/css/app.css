@@ -1,3 +1,107 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.flex::before,
+.flex::after {
+    display: none !important;
+}
+
+/* Input */
+.input-error {
+    @apply ring ring-red-600;
+}
+.input-primary {
+    @apply bg-form-bg focus:outline-teal-700 focus:outline-none;
+}
+.input-primary-outline {
+    @apply bg-[#fff] focus:bg-[#fff] border-teal-700 focus:border-teal-700;
+    @apply file:bg-teal-700 file:text-white file:p-2;
+}
+/* Input */
+
+/* Button */
+.btn-primary {
+    @apply bg-teal-700 hover:bg-teal-900 text-white;
+}
+.btn-warning {
+    @apply bg-yellow-500 hover:bg-yellow-600 text-white;
+}
+.btn-danger {
+    @apply bg-red-500 hover:bg-red-700 text-white;
+}
+.btn-light-outline {
+    @apply text-white hover:brightness-50 border border-white;
+}
+.btn-white-outline {
+    @apply text-black hover:brightness-50 border border-[#f1f1f1];
+}
+/* Button */
+
+/* Sidebar */
+@layer components {
+    .side-link {
+        @apply flex items-center font-normal text-black text-sm w-full mb-5 gap-3 transition-all;
+    }
+
+    .side-link svg {
+        @apply text-[#B7B7B7];
+    }
+    .side-link.active {
+        @apply font-semibold border-r-[3px] border-teal-700;
+    }
+
+    .side-link.active svg {
+        @apply text-teal-700;
+    }
+
+    input.top-search {
+        @apply rounded-full border border-gray-2 placeholder:text-gray-1 text-base text-gray-1 px-5 py-[11px]
+                w-full max-w-[570px] focus:outline-none focus:ring-2 transition-all bg-no-repeat bg-center
+                bg-[center_right_20px]
+                ;
+    }
+}
+/* Sidebar */
+
+@layer components {
+    [type="text"],
+    [type="email"],
+    [type="url"],
+    [type="password"],
+    [type="number"],
+    [type="date"],
+    [type="datetime-local"],
+    [type="month"],
+    [type="search"],
+    [type="tel"],
+    [type="time"],
+    [type="week"],
+    [multiple],
+    textarea,
+    select {
+        /* border: transparent; */
+        border-color: transparent;
+    }
+    [type="text"]:focus,
+    [type="email"]:focus,
+    [type="url"]:focus,
+    [type="password"]:focus,
+    [type="number"]:focus,
+    [type="date"]:focus,
+    [type="datetime-local"]:focus,
+    [type="month"]:focus,
+    [type="search"]:focus,
+    [type="tel"]:focus,
+    [type="time"]:focus,
+    [type="week"]:focus,
+    [multiple]:focus,
+    textarea:focus,
+    select:focus {
+        outline: transparent;
+        /* border: transparent; */
+        border-color: transparent;
+        box-shadow: none;
+        --tw-ring-color: transparent;
+    }
+}
