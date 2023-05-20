@@ -1,5 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
+import { Link } from "@inertiajs/react";
 
 MovieCard.propTypes = {
     slug: PropTypes.string.isRequired,
@@ -18,9 +19,7 @@ export default function MovieCard({ slug, name, category, thumbnail }) {
             />
             <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black rounded-bl-[28px] rounded-br-[28px]">
                 <div className="px-7 pb-7">
-                    <div className="font-medium text-xl text-white">
-                        {name}
-                    </div>
+                    <div className="font-medium text-xl text-white">{name}</div>
                     <p className="mb-0 text-gray-300 text-base mt-[10px]">
                         {category}
                     </p>
@@ -32,7 +31,7 @@ export default function MovieCard({ slug, name, category, thumbnail }) {
             >
                 <img src="/icons/ic_play.svg" className="" width="50" alt="" />
             </div>
-            <a href={slug} className="inset-0 absolute z-50"></a>
+            <Link href={route('prototype.movie.show', slug)} className="inset-0 absolute z-50"></Link>
         </div>
     );
 }
