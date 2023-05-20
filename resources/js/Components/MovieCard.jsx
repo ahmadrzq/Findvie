@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from "prop-types";
 
 MovieCard.propTypes = {
     slug: PropTypes.string.isRequired,
