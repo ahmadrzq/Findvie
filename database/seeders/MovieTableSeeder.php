@@ -20,7 +20,7 @@ class MovieTableSeeder extends Seeder
                 'category' => 'Action',
                 'video_url' => 'https://youtube.com/eo12ihwhw9r82yrew',
                 'thumbnail' => 'https://picsum.photos/id/3/300/500',
-                'rating' => 8.1,
+                'rating' => 4.5,
                 'is_featured' => 1
             ], [
                 'name' => 'Knives Out',
@@ -28,15 +28,15 @@ class MovieTableSeeder extends Seeder
                 'category' => 'Mystery',
                 'video_url' => 'https://youtube.com/eo12ihwhw9r82yrew',
                 'thumbnail' => 'https://picsum.photos/id/4/300/500',
-                'rating' => 8.8,
+                'rating' => 4.4,
                 'is_featured' => 0
             ], [
                 'name' => 'One Piece',
                 'slug' => 'one-piece',
                 'category' => 'Animation',
                 'video_url' => 'https://youtube.com/eo12ihwhw9r82yrew',
-                'thumbnail' => 'https://picsum.photos/id/4/300/500',
-                'rating' => 8.1,
+                'thumbnail' => 'https://picsum.photos/id/5/300/500',
+                'rating' => 4.8,
                 'is_featured' => 0
             ]
         ];
