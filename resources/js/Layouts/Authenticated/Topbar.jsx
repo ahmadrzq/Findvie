@@ -58,6 +58,7 @@ export default function Topbar({ name }) {
                                 method="post"
                                 href={route("logout")}
                                 className="transition-all hover:bg-sky-100 p-4"
+                                as="button"
                             >
                                 Sign Out
                             </Link>
