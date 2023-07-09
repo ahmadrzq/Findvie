@@ -1,11 +1,12 @@
 import Button from "@/Components/Button";
 import Authenticated from "@/Layouts/Authenticated";
 import React from "react";
-import { Link, usePage } from "@inertiajs/react";
+import { Link, useForm, usePage } from "@inertiajs/react";
 import FlashMessage from "@/Components/FlashMessage";
 
 export default function Index({ flashMessage, movies }) {
     const { auth } = usePage().props;
+    const { delete: destroy, put } = useForm();
     return (
         <Authenticated auth={auth}>
             <Link href={route("admin.dashboard.movie.create")}>
@@ -39,16 +40,35 @@ export default function Index({ flashMessage, movies }) {
                             <td>{movie.category}</td>
                             <td>{movie.rating.toFixed(1)}</td>
                             <td>
-                                <Link href={route('admin.dashboard.movie.edit', movie.id)}>
+                                <Link
+                                    href={route(
+                                        "admin.dashboard.movie.edit",
+                                        movie.id
+                                    )}
+                                >
                                     <Button type="button" variant="warning">
                                         Edit
                                     </Button>
                                 </Link>
                             </td>
                             <td>
-                                <Button type="button" variant="danger">
-                                    Delete
-                                </Button>
+                                <div
+                                    onClick={() => {
+                                        movie.deleted_at ? put(route('admin.dashboard.movie.restore', movie.id)) :
+                                        destroy(
+                                            route(
+                                                "admin.dashboard.movie.destroy",
+                                                movie.id
+                                            )
+                                        );
+                                    }}
+                                >
+                                    <Button type="button" variant="danger">
+                                        {movie.deleted_at
+                                            ? "Restore"
+                                            : "Delete"}
+                                    </Button>
+                                </div>
                             </td>
                         </tr>
                     ))}
