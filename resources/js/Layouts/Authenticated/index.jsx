@@ -3,7 +3,8 @@ import React from "react";
 import Sidebar from "./Sidebar";
 import Topbar from "./Topbar";
 
-export default function Authenticated({ children }) {
+
+export default function Authenticated({  user, children }) {
     return (
         <>
             <Head title="Dashboard" />
@@ -16,11 +17,10 @@ export default function Authenticated({ children }) {
                 <div className="ml-[300px] px-[50px]">
                     <div className="py-10 flex flex-col gap-[50px]">
                         {/* <!-- Topbar --> */}
-                        <Topbar />
+                        <Topbar name={user.name} />
                         {/* <!-- /Topbar --> */}
 
                         <main>{children}</main>
-
                     </div>
                 </div>
                 {/* <!-- END: Content --> */}

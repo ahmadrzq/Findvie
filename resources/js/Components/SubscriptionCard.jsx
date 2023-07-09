@@ -106,7 +106,7 @@ export default function SubscriptionCard({
 
                     {/* <!-- Bottom: CTA Button --> */}
                     <div onClick={onSelectSubscription}>
-                        <Link href="payment_status/success.html">
+                        <Link >
                             <Button type="button" variant="primary">
                                 <span className="text-base font-semibold">
                                     Subscribe Now
