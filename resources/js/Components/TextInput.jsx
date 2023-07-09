@@ -9,7 +9,6 @@ const TextInput = forwardRef(function TextInput(
         isFocused = false,
         value,
         defaultValue,
-        handleChange,
         autoComplete,
         required,
         variant = "primary",
@@ -42,7 +41,6 @@ const TextInput = forwardRef(function TextInput(
             ref={input}
             autoComplete={autoComplete}
             required={required}
-            onChange={(e) => handleChange(e)}
             placeholder={placeholder}
         />
     );
