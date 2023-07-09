@@ -2,9 +2,11 @@ import { Head } from "@inertiajs/react";
 import React from "react";
 import Sidebar from "./Sidebar";
 import Topbar from "./Topbar";
+import { usePage } from "@inertiajs/react";
 
 
-export default function Authenticated({  user, children }) {
+export default function Authenticated({  children }) {
+    const { auth } = usePage().props;
     return (
         <>
             <Head title="Dashboard" />
@@ -17,7 +19,7 @@ export default function Authenticated({  user, children }) {
                 <div className="ml-[300px] px-[50px]">
                     <div className="py-10 flex flex-col gap-[50px]">
                         {/* <!-- Topbar --> */}
-                        <Topbar name={user.name} />
+                        <Topbar name={auth.user.name} />
                         {/* <!-- /Topbar --> */}
 
                         <main>{children}</main>
